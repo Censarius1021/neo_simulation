@@ -23,7 +23,12 @@
   <-->
   <!-- <xacro:include filename="$(find neo_simulation)/robots/mpo_500/xacros/camera.xacro" />  -->
   
+  <!--TRAILER-->
+  <!-- TRAILER BODY -->
+  <xacro:include filename="$(find neo_simulation)/robots/mpo_500/xacros/mpo_500_trailer_body.xacro" />
 
+
+  
 
   <link name="base_link" />
 
@@ -31,6 +36,13 @@
   <xacro:mpo_500_base name="base_footprint" parent="base_link">
     <origin xyz="0 0 0" rpy="0 0 0" />
   </xacro:mpo_500_base>
+
+  <!-- Base link macro -->
+  <xacro:mpo_500_trailer_base name="trailer_footprint" parent="base_footprint">
+    <origin xyz="-1 0 0" rpy="0 0 0" />
+  </xacro:mpo_500_trailer_base>
+
+ 
 
   <!-- Wheel Macro -->
   <xacro:omni_wheel_250 name="mpo_500_omni_wheel_front_left" parent="base_footprint">
@@ -57,6 +69,16 @@
   <xacro:sick_laser_v0 name="lidar_2" parent="base_link" ros_topic="lidar_2/scan_filtered">
     <origin xyz="-0.442 0 0.372" rpy="0 0 3.14" />
   </xacro:sick_laser_v0>
+
+
+
+
+ 
+
+
+
+
+
 
   <!--+++++++++++++++++++ IMU ++++++++++++++++++++++++-->
   <!-- Comment or uncomment based on your requirement -->
