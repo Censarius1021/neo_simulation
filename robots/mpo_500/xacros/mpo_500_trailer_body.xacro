@@ -2,11 +2,11 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mpo_500">
 
   <xacro:macro name="mpo_500_trailer_base" params="name parent *origin">
-    <joint name="${name}_joint" type="fixed">
+    <joint name="${name}_joint" type="revolute">
       <xacro:insert_block name="origin" />
       <axis xyz="0 0 -1" />
-      <!-- <limit effort="1000.0" lower="-1e+16" upper="1e+16" velocity="3.5"/> -->
-      <joint_properties damping="1" friction="1" />
+      <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+      
       <parent link="${parent}" />
       <child link="${name}" />
    </joint>
@@ -19,16 +19,15 @@
                  izz="2.8" />
       </inertial>
       <visual>
-        <origin xyz="0. 0. 0" rpy="-1.571 0 1.571" />
+        <origin xyz="-0.5 0. 0.25" rpy="-1.571 0 1.571" />
         <geometry>
-            <mesh filename="package://neo_simulation/robots/mpo_500/meshes/MPO-500-BODY.dae" scale="0.001 0.001 0.001"/>
+          <box size="1 0.25 1.5"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0. 0. 0.0" rpy="-1.571 0 1.571" />
+        <origin xyz="-0.5 0. 0.25" rpy="-1.571 0 1.571" />
         <geometry>
-          <!--<box size="0.68 0.41 0.25"/> -->
-           <mesh filename="package://neo_simulation/robots/mpo_500/meshes/MPO-500-BODY.dae" scale="0.001 0.001 0.001"/>
+          <box size="1 0.25 1.5"/> 
         </geometry>
       </collision>
     </link>
