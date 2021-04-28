@@ -27,6 +27,7 @@
   <!-- TRAILER BODY -->
   <xacro:include filename="$(find neo_simulation)/robots/mpo_500/xacros/mpo_500_trailer_body.xacro" />
 
+  <xacro:include filename="$(find neo_simulation)/robots/mpo_500/xacros/mpo_500_trailer_parameter.xacro" />
 
   
 
@@ -38,8 +39,9 @@
   </xacro:mpo_500_base>
 
   <!-- Base link macro -->
-  <xacro:mpo_500_trailer_base name="trailer_footprint" parent="base_footprint">
+  <xacro:mpo_500_trailer_base name="trailer_footprint" parent="base_footprint" >
     <origin xyz="-1 0 0" rpy="0 0 0" />
+    <!--xacro:property name="x_length_chassis_trailer" value="2.0" /-->
   </xacro:mpo_500_trailer_base>
 
  

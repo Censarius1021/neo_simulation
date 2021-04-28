@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ww.ros.org/wiki/xacro">
-    <!-- Define parameter for the differntial drive robot -->
+    <!-- Define parameter for the trailer -->
     <!-- Parameter for the chassis, size [m] and mass [kg] -->
-    <xacro:property name="x_chassis" value="0.5" />
-    <xacro:property name="y_chassis" value="0.3" />
-    <xacro:property name="z_chassis" value="0.15" />
-    <xacro:property name="m_chassis" value="10.0" />
+    <xacro:property name="x_length_chassis_trailer" value="1.0" />
+    <xacro:property name="y_length_chassis_trailer" value="0.25" />
+    <xacro:property name="z_length_chassis_trailer" value="1.5" />
+    <xacro:property name="mass_chassis_trailer" value="64.0" />
 
     <!-- Parameter for the wheels, radius [m], height [m], mass [kg], torque[Nm], wheelbase [m] -->
-    <xacro:property name="r_wheel" value="0.1075" />
-    <xacro:property name="h_wheel" value="0.03" />
-    <xacro:property name="m_wheel" value="3.0" />
-    <xacro:property name="torque_wheel" value="10" />
+    <xacro:property name="radius_wheel_trailer" value="0.1075" />
+    <xacro:property name="height_wheel_trailer" value="0.03" />
+    <xacro:property name="mass_wheel_trailer" value="3.0" />
+    <xacro:property name="torque_wheel_trailer" value="10" />
     <xacro:property name="L_wheel" value="0.1788" />
 
 </robot>

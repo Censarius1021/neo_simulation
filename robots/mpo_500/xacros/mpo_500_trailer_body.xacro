@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mpo_500">
 
+  <!--xacro:include filename="$(find PeTRA)/neo_simulation/robots/mpo_500/xacros/mpo_500_trailer_parameter.xacro"/-->
+  <xacro:include filename="$(find neo_simulation)/robots/mpo_500/xacros/mpo_500_trailer_parameter.xacro" />
+
   <xacro:macro name="mpo_500_trailer_base" params="name parent *origin">
     <joint name="${name}_joint" type="revolute">
       <xacro:insert_block name="origin" />
@@ -17,17 +20,18 @@
          <inertia ixx="2.8" ixy="0.0" ixz="0.0"
                  iyy="2.8" iyz="0.0" 
                  izz="2.8" />
+        
       </inertial>
       <visual>
         <origin xyz="-0.5 0. 0.25" rpy="-1.571 0 1.571" />
         <geometry>
-          <box size="1 0.25 1.5"/>
+          <box size="${x_length_chassis_trailer} ${y_length_chassis_trailer} ${z_length_chassis_trailer}"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="-0.5 0. 0.25" rpy="-1.571 0 1.571" />
         <geometry>
-          <box size="1 0.25 1.5"/> 
+          <box size="${x_length_chassis_trailer} ${y_length_chassis_trailer} ${z_length_chassis_trailer}"/> 
         </geometry>
       </collision>
     </link>
