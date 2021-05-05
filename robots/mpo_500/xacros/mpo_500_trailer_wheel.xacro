@@ -4,7 +4,7 @@
   <!-- Include parameter for trailer-->
   <xacro:include filename="$(find neo_simulation)/robots/mpo_500/xacros/mpo_500_trailer_parameter.xacro" />
 
-  <xacro:macro name="trailer_wheel" params="name parent *origin">
+  <xacro:macro name="trailer_wheel" params="name parent *origin *surface">
    <joint name="${name}_joint" type="revolute">
     <xacro:insert_block name="origin" />
     <axis xyz="0 1 0" />
@@ -38,7 +38,7 @@
       <cylinder radius="${radius_wheel_trailer}" length="${height_wheel_trailer}"/>
         <!-- <mesh filename="package://neo_simulation/robots/mpo_500/meshes/MPO-500-WHEEL.dae" scale="0.001 0.001 0.001"/> -->
        <!-- <cylinder radius="0.126" length="0.110"/> -->
-      
+       <xacro:insert_block name="surface" />
      </geometry>
     </collision>
    </link>
