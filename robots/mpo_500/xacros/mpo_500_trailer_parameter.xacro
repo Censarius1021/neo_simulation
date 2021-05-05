@@ -2,15 +2,20 @@
 <robot xmlns:xacro="http://ww.ros.org/wiki/xacro">
     <!-- Define parameter for the trailer -->
     <!-- Parameter for the chassis, size [m] and mass [kg] -->
-    <xacro:property name="x_length_chassis_trailer" value="1.0" />
-    <xacro:property name="y_length_chassis_trailer" value="0.25" />
-    <xacro:property name="z_length_chassis_trailer" value="1.5" />
+    <xacro:property name="x_length_chassis_trailer" value="1.5" />
+    <xacro:property name="y_length_chassis_trailer" value="1.0" />
+    <xacro:property name="z_length_chassis_trailer" value="0.25" />
     <xacro:property name="mass_chassis_trailer" value="64.0" />
 
     <!-- Parameter for the origin of the chassis -->
     <xacro:property name="x_origin_chassis_trailer" value="-1.5" />
     <xacro:property name="y_origin_chassis_trailer" value="0" />
-    <xacro:property name="z_origin_chassis_trailer" value="0.25" />
+    <xacro:property name="z_origin_chassis_trailer" value="0.4" />
+
+    <!-- Parameter for the origin of trailer_wheel_front_left -->
+    <xacro:property name="x_origin_trailer_wheel_front_left" value="-1.5" />
+
+
 
     <!-- Parameter for the wheels, radius [m], height [m], mass [kg], torque[Nm], wheelbase [m] -->
     <xacro:property name="radius_wheel_trailer" value="0.126" />

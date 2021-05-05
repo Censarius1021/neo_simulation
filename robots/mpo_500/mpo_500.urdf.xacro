@@ -47,40 +47,31 @@
 
   <!-- TRAILER WHEEL macro-->
   <xacro:trailer_wheel name="mpo_500_trailer_wheel_front_left" parent="trailer_footprint">
-    <origin xyz="0 
-    0
-    0" 
-    rpy="0 0 0" />
+    <origin xyz="${x_origin_chassis_trailer-x_length_chassis_trailer/2+radius_wheel_trailer} 0.28 0.13" rpy="0 0 0" />
   </xacro:trailer_wheel>
 
-  <xacro:trailer_wheel name="mpo_500_trailer_wheel_middle_left" parent="trailer_footprint">
-    <origin xyz="-0.75 
-    0
-    0" 
-    rpy="0 0 0" />
+  <xacro:trailer_wheel name="mpo_500_trailer_wheel_front_right" parent="trailer_footprint">
+    <origin xyz="0.25 -0.28 0.13" rpy="0 0 3.14" />
   </xacro:trailer_wheel>
 
   <xacro:trailer_wheel name="mpo_500_trailer_wheel_back_left" parent="trailer_footprint">
-    <origin xyz="-1.5 
-    0
-    0" 
+    <origin xyz="-0.25 0.28 0.13" rpy="0 0 0" />
+  </xacro:trailer_wheel>
+
+  <xacro:trailer_wheel name="mpo_500_trailer_wheel_back_right" parent="trailer_footprint">
+    <origin xyz="-0.25 -0.28 0.13" rpy="0 0 3.14" />
+  </xacro:trailer_wheel>
+
+
+  <!-- 
+  <xacro:trailer_wheel name="mpo_500_trailer_wheel_front_left" parent="trailer_footprint">
+    <origin xyz="${x_origin_chassis_trailer+x_length_chassis_trailer/2+radius_wheel_trailer} 
+    ${y_origin_chassis_trailer+x_length_chassis_trailer}
+    ${z_origin_chassis_trailer}" 
     rpy="0 0 0" />
-  </xacro:trailer_wheel>
+  </xacro:trailer_wheel> -->
 
-   <!-- 
-  <xacro:trailer_wheel name="mpo_500_trailer_wheel_middle_left" parent="trailer_footprint">
-    <origin xyz="${x_length_chassis_trailer} 
-    radius_wheel_trailer/2-y_length_chassis_trailer/2
-     -z_length_chassis_trailer/4" rpy="0 0 0" />
-  </xacro:trailer_wheel>
--->
-
- <!-- 
-  <xacro:trailer_wheel name="mpo_500_trailer_wheel_back_left" parent="trailer_footprint">
-    <origin xyz="${radius_wheel_trailer/x_length_chassis_trailer/2} 
-    radius_wheel_trailer/2-y_length_chassis_trailer/2 -z_length_chassis_trailer/4" rpy="0 0 0" />
-  </xacro:trailer_wheel>
-    -->
+  
   
 <!-- ${-x_length_chassis_trailer/4}-->
 <!-- ${y_length_chassis_trailer/2+height_wheel_trailer}-->
