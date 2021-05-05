@@ -7,9 +7,14 @@
     <xacro:property name="z_length_chassis_trailer" value="1.5" />
     <xacro:property name="mass_chassis_trailer" value="64.0" />
 
+    <!-- Parameter for the origin of the chassis -->
+    <xacro:property name="x_origin_chassis_trailer" value="-1.5" />
+    <xacro:property name="y_origin_chassis_trailer" value="0" />
+    <xacro:property name="z_origin_chassis_trailer" value="0.25" />
+
     <!-- Parameter for the wheels, radius [m], height [m], mass [kg], torque[Nm], wheelbase [m] -->
-    <xacro:property name="radius_wheel_trailer" value="0.1075" />
-    <xacro:property name="height_wheel_trailer" value="0.03" />
+    <xacro:property name="radius_wheel_trailer" value="0.126" />
+    <xacro:property name="height_wheel_trailer" value="0.110" />
     <xacro:property name="mass_wheel_trailer" value="3.0" />
     <xacro:property name="torque_wheel_trailer" value="10" />
     <xacro:property name="L_wheel" value="0.1788" />

@@ -27,23 +27,74 @@
   <!-- TRAILER BODY -->
   <xacro:include filename="$(find neo_simulation)/robots/mpo_500/xacros/mpo_500_trailer_body.xacro" />
 
+  <!-- TRAILER PARAMETER-->
   <xacro:include filename="$(find neo_simulation)/robots/mpo_500/xacros/mpo_500_trailer_parameter.xacro" />
 
-  
+  <!-- TRAILER WHEEL-->
+  <xacro:include filename="$(find neo_simulation)/robots/mpo_500/xacros/mpo_500_trailer_wheel.xacro" />
+
+
+
+
 
   <link name="base_link" />
+
+  <!-- TRAILER START-->
+  <!-- Base link macro -->
+  <xacro:mpo_500_trailer_base name="trailer_footprint" parent="base_footprint" >
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:mpo_500_trailer_base>
+
+  <!-- TRAILER WHEEL macro-->
+  <xacro:trailer_wheel name="mpo_500_trailer_wheel_front_left" parent="trailer_footprint">
+    <origin xyz="0 
+    0
+    0" 
+    rpy="0 0 0" />
+  </xacro:trailer_wheel>
+
+  <xacro:trailer_wheel name="mpo_500_trailer_wheel_middle_left" parent="trailer_footprint">
+    <origin xyz="-0.75 
+    0
+    0" 
+    rpy="0 0 0" />
+  </xacro:trailer_wheel>
+
+  <xacro:trailer_wheel name="mpo_500_trailer_wheel_back_left" parent="trailer_footprint">
+    <origin xyz="-1.5 
+    0
+    0" 
+    rpy="0 0 0" />
+  </xacro:trailer_wheel>
+
+   <!-- 
+  <xacro:trailer_wheel name="mpo_500_trailer_wheel_middle_left" parent="trailer_footprint">
+    <origin xyz="${x_length_chassis_trailer} 
+    radius_wheel_trailer/2-y_length_chassis_trailer/2
+     -z_length_chassis_trailer/4" rpy="0 0 0" />
+  </xacro:trailer_wheel>
+-->
+
+ <!-- 
+  <xacro:trailer_wheel name="mpo_500_trailer_wheel_back_left" parent="trailer_footprint">
+    <origin xyz="${radius_wheel_trailer/x_length_chassis_trailer/2} 
+    radius_wheel_trailer/2-y_length_chassis_trailer/2 -z_length_chassis_trailer/4" rpy="0 0 0" />
+  </xacro:trailer_wheel>
+    -->
+  
+<!-- ${-x_length_chassis_trailer/4}-->
+<!-- ${y_length_chassis_trailer/2+height_wheel_trailer}-->
+<!-- ${radius_wheel_trailer/2-z_length_chassis_trailer/2}-->
+
+  <!-- TRAILER END-->
+
 
   <!-- Base link macro -->
   <xacro:mpo_500_base name="base_footprint" parent="base_link">
     <origin xyz="0 0 0" rpy="0 0 0" />
   </xacro:mpo_500_base>
 
-  <!-- Base link macro -->
-  <xacro:mpo_500_trailer_base name="trailer_footprint" parent="base_footprint" >
-    <origin xyz="-1 0 0" rpy="0 0 0" />
-    <!--xacro:property name="x_length_chassis_trailer" value="2.0" /-->
-  </xacro:mpo_500_trailer_base>
-
+  
  
 
   <!-- Wheel Macro -->

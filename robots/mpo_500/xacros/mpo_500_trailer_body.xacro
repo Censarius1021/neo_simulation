@@ -23,13 +23,13 @@
         
       </inertial>
       <visual>
-        <origin xyz="-0.5 0. 0.25" rpy="-1.571 0 1.571" />
+        <origin xyz="${x_origin_chassis_trailer} ${y_origin_chassis_trailer} ${z_origin_chassis_trailer}" rpy="-1.571 0 1.571" />
         <geometry>
           <box size="${x_length_chassis_trailer} ${y_length_chassis_trailer} ${z_length_chassis_trailer}"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="-0.5 0. 0.25" rpy="-1.571 0 1.571" />
+        <origin xyz="${x_origin_chassis_trailer} ${y_origin_chassis_trailer} ${z_origin_chassis_trailer}" rpy="-1.571 0 1.571" />
         <geometry>
           <box size="${x_length_chassis_trailer} ${y_length_chassis_trailer} ${z_length_chassis_trailer}"/> 
         </geometry>
