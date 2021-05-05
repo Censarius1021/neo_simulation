@@ -45,21 +45,29 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
   </xacro:mpo_500_trailer_base>
 
-  <!-- TRAILER WHEEL macro-->
+  <!-- TRAILER WHEEL macro: Wheels depend on the height and length of the chassis. Wheels depnd not on the height of the chassis.-->
   <xacro:trailer_wheel name="mpo_500_trailer_wheel_front_left" parent="trailer_footprint">
-    <origin xyz="${x_origin_chassis_trailer-x_length_chassis_trailer/2+radius_wheel_trailer} 0.28 0.13" rpy="0 0 0" />
+    <origin xyz="${x_origin_chassis_trailer-x_length_chassis_trailer/2+radius_wheel_trailer} ${y_length_chassis_trailer/2-height_wheel_trailer/2} ${radius_wheel_trailer}" rpy="0 0 0" />
   </xacro:trailer_wheel>
 
   <xacro:trailer_wheel name="mpo_500_trailer_wheel_front_right" parent="trailer_footprint">
-    <origin xyz="0.25 -0.28 0.13" rpy="0 0 3.14" />
+    <origin xyz="${x_origin_chassis_trailer-x_length_chassis_trailer/2+radius_wheel_trailer} ${-y_length_chassis_trailer/2+height_wheel_trailer/2} ${radius_wheel_trailer}" rpy="0 0 3.14" />
+  </xacro:trailer_wheel>
+
+  <xacro:trailer_wheel name="mpo_500_trailer_wheel_middle_left" parent="trailer_footprint">
+    <origin xyz="${x_origin_chassis_trailer} ${y_length_chassis_trailer/2-height_wheel_trailer/2} ${radius_wheel_trailer}" rpy="0 0 0" />
+  </xacro:trailer_wheel>
+
+  <xacro:trailer_wheel name="mpo_500_trailer_wheel_middle_right" parent="trailer_footprint">
+    <origin xyz="${x_origin_chassis_trailer} ${-y_length_chassis_trailer/2+height_wheel_trailer/2} ${radius_wheel_trailer}" rpy="0 0 3.14" />
   </xacro:trailer_wheel>
 
   <xacro:trailer_wheel name="mpo_500_trailer_wheel_back_left" parent="trailer_footprint">
-    <origin xyz="-0.25 0.28 0.13" rpy="0 0 0" />
+    <origin xyz="${x_origin_chassis_trailer+x_length_chassis_trailer/2-radius_wheel_trailer} ${y_length_chassis_trailer/2-height_wheel_trailer/2} ${radius_wheel_trailer}" rpy="0 0 0" />
   </xacro:trailer_wheel>
 
   <xacro:trailer_wheel name="mpo_500_trailer_wheel_back_right" parent="trailer_footprint">
-    <origin xyz="-0.25 -0.28 0.13" rpy="0 0 3.14" />
+    <origin xyz="${x_origin_chassis_trailer+x_length_chassis_trailer/2-radius_wheel_trailer} ${-y_length_chassis_trailer/2+height_wheel_trailer/2} ${radius_wheel_trailer}" rpy="0 0 3.14" />
   </xacro:trailer_wheel>
 
 
